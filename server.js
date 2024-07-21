@@ -2,6 +2,11 @@
 // We begin by loading Express
 const express = require("express");
 
+
+require('dotenv').config();
+
+require('./config/database');
+
 const app = express();
 
 //middleware  to shows the status of the process
@@ -11,9 +16,6 @@ app.use(morgan('dev'))
 
 //ROUTES
 
-//Landing 
-
-// GET /
 app.get("/", async (req, res) => {
     res.render("index.ejs");
   });
